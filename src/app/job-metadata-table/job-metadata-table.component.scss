@@ -1,0 +1,79 @@
+.persons {
+    text-align: left;
+    margin: 0.7em 0;
+    width: 100%;
+}
+
+td {
+    border: 1px solid black;
+    width: 35%;
+    padding: 0.3em;
+}
+
+.head {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1%;
+}
+
+.storeListDropdown {
+    border: none;
+    background: white;
+    float: right;
+    width: 1rem;
+}
+
+.selectHeader {
+    border: none;
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.ownerHeader{
+    text-align: left;
+    padding-left: 7px;
+}
+
+.opTitle {
+    /*font-weight: bold;*/
+}
+
+.tdContainer {
+    /*min-height: 100px;*/
+    color: black;
+    margin-top: 0px;
+    padding-top: 0px;
+    vertical-align: top;
+}
+
+.storeInfo {
+    margin-top: 3px;
+    padding-top: 0px;
+}
+
+.editInput {
+    border: none;
+}
+
+.cityStateZip input {
+    width: 32.33%;
+}
+
+.ownerB input{
+    width: 50%;
+    float: left;
+}
+
+.inputInvalid {
+    border: 0.5px solid pink;
+    background-color: pink;
+}
+
+/*.repInfo {*/
+    /**/
+/*}*/

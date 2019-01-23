@@ -1,0 +1,105 @@
+<table class="persons">
+  <tbody>
+    <tr class="head">
+      <!--Owner header table-->
+      <td *ngIf="ownerCol" class="ownerHeader">OWNER</td>
+      <!--SubContractor sales header table-->
+      <td *ngIf="middleEntityForm">
+        <select *ngIf="currentStore" [(ngModel)]="currentStore" (ngModelChange)="storeChange()" class="selectHeader opTitle">
+          <option [ngValue]="currentStore">{{tableType}}</option>
+          <option *ngFor="let store of storeList" [ngValue]="store">
+            {{store.name}}
+          </option>
+        </select>
+      </td>
+      <!--SalesRep header table-->
+      <td *ngIf="saleReCol">
+        <select *ngIf="currentSalesRep" [(ngModel)]="currentSalesRep" (ngModelChange)="salesRepChange()" class="selectHeader opTitle">
+          <option [ngValue]="currentSalesRep">SALES REP</option>
+          <option *ngFor="let rep of salesReps" [ngValue]="rep">
+            {{rep.name}}
+          </option>
+          <!--<option>other</option>-->
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td *ngIf="ownerCol">
+        <div class="tdContainer">
+          <!-- OWNER INFORMATION -->
+          <form [formGroup]="ownerForm">
+              <div class="ownerB">
+                <input placeholder="Name" formControlName="name">
+              </div>
+              <input [ngStyle]="{ 'width': '100%' }" [ngClass]="{'editInput': true, 'inputInvalid' : addrStreetOw.invalid && addrStreetOw.touched}"
+                placeholder="Street" formControlName="street">
+              <div class="cityStateZip">
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : addrCityOw.invalid && addrCityOw.touched}"
+                  placeholder="City" formControlName="city">
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : addrStateOw.invalid && addrStateOw.touched}"
+                  placeholder="State" formControlName="state">
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : addrZipCodeOw.invalid && addrZipCodeOw.touched}"
+                  placeholder="ZipCode" formControlName="zipCode">
+              </div>
+              <div>
+                <input [ngStyle]="{ 'width': '100%' }" [ngClass]="{'editInput': true, 'inputInvalid' : phoneNumberOw.invalid && phoneNumberOw.touched}"
+                  placeholder="Phone Number" formControlName="phoneNumber">
+              </div>
+              <div>
+                <input [ngStyle]="{ 'width': '100%' }" [ngClass]="{'editInput': true, 'inputInvalid' : emailOw.invalid && emailOw.touched}"
+                  placeholder="Email" formControlName="email">
+              </div>
+          </form>
+        </div>
+      </td>
+      <td *ngIf="middleEntityForm" class="tdContainer">
+        <div class="tdContainer">
+          <!-- STORE INFORMATION -->
+          <form [formGroup]="middleEntityForm">
+              <div>
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : nameSt?.invalid && nameSt?.touched}" placeholder="Name"
+                  formControlName="name">
+              </div>
+              <input [ngClass]="{'editInput': true, 'inputInvalid' : addrStreetSt?.invalid && addrStreetSt?.touched}" placeholder="Street"
+                formControlName="street">
+              <div class="cityStateZip">
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : addrCitySt?.invalid && addrCitySt?.touched}" placeholder="City"
+                  formControlName="city">
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : addrStateSt?.invalid && addrStateSt?.touched}" placeholder="State"
+                  formControlName="state">
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : addrZipCodeSt?.invalid && addrZipCodeSt?.touched}" placeholder="ZipCode"
+                  formControlName="zipCode">
+              </div>
+              <div>
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : phoneNumberSt?.invalid && phoneNumberSt?.touched}"
+                  placeholder="Phone Number" formControlName="phoneNumber">
+              </div>
+              <div>
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : emailSt?.invalid && emailSt?.touched}" placeholder="Email"
+                  formControlName="email">
+              </div>
+          </form>
+        </div>
+      </td>
+      <td class="tdContainer">
+        <div class="tdContainer">
+          <!-- SALES REP INFORMATION -->
+          <form [formGroup]="salesRepForm">
+              <div>
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : nameSt?.invalid && nameSt?.touched}" placeholder="Name"
+                  formControlName="name">
+              </div>
+              <div>
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : phoneNumberSt?.invalid && phoneNumberSt?.touched}"
+                  placeholder="Phone Number" formControlName="phoneNumber">
+              </div>
+              <div>
+                <input [ngClass]="{'editInput': true, 'inputInvalid' : emailSt?.invalid && emailSt?.touched}" placeholder="Email"
+                  formControlName="email">
+              </div>
+          </form>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
